@@ -5,6 +5,9 @@ class Movie < ActiveRecord::Base
 
   validates :title, presence: true
 
+  def self.average_rating
+  end
+
   def rotten_finder
     RottenMovie.find(title: title, limit: 1)
   end

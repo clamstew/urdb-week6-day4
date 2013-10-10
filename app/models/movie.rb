@@ -8,6 +8,7 @@ class Movie < ActiveRecord::Base
   end
   
   def snippet
-    description.truncate 50
+
+    (description != nil) ? (description.truncate 50) : ""
   end
 end

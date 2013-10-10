@@ -21,6 +21,15 @@ describe Movie do
         expect(movie.snippet).to eq('An offbeat romantic comedy about a woman who do...')
       end
     end
+
+    context "when description is nil" do
+      it "return an empty string" do
+        allow(movie).to receive(:description).and_return(nil)
+
+        expect(movie.snippet).to eq("")
+      end  
+    end
+
   end
 
 

@@ -11,4 +11,7 @@ class Movie < ActiveRecord::Base
 
     (description != nil) ? (description.truncate 50) : ""
   end
+
+  def audience_rating
+  end
 end

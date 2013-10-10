@@ -6,6 +6,15 @@ class Movie < ActiveRecord::Base
   validates :title, presence: true
 
   def self.average_rating
+    scores = self.all.collect do |movie|
+      movie.audience_rating
+    end
+    scores.compact!
+    if scores.length != 0
+      scores.sum / scores.length
+    else 
+      nil
+    end
   end
 
   def rotten_finder

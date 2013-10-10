@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Movie do
   let(:movie) { Movie.new }
-  let(:rotten_finder_return) {OpenStruct.new(ratings: OpenStruct.new(audience_rating: 84))}
+  let(:rotten_finder_return) {OpenStruct.new(ratings: OpenStruct.new(audience_score: 84))}
 
   describe "#snippet" do
     context "when description is less than or equal to 50 characters" do 
